@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        outline: none;
+        padding: 50px 0;
+        font-family: 'Goldman', cursive;
+        background: #313030;
+    }
+    .mauto{
+        margin: auto;
+    }
+    .p10{
+        padding: 10px;
+    }
+    .shadow{
+        box-shadow: 0px 0px 6px 1px #000;
+    }
+    .s360x135{
+        width: 360px; height: 135px;
+      
+        align-content: center
+    }
+   .ads_box {
+    overflow: hidden;
+    margin-bottom: 50px;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+padding: 0;
+       background:#0b3c52;
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: right;
+       
+}
+    .ads_box:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height:100px;
+/*        background: #1c3850;*/
+        z-index: -1
+    }
+    .logo-box{
+        width: 150px;
+/*        height: 20%;*/
+        box-sizing: border-box;
+        margin-left: 20px;
+        margin-top: 30px
+    }
+    img{
+        width: 100%;
+        
+/*        height: 100%;*/
+    }
+    .dflex{
+        display: flex;
+        flex-wrap: wrap;
+    }
+ 
+.img-box {
+    width: 50%;
+    /* height: 70%; */
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    height: 280px;
+    margin-top: -1px;
+    padding: 50px;
+}
+  
+    .content-box{
+        width: 50%;
+        box-sizing: border-box;
+        text-align: center;
+       
+    }
+    h2{
+        font-size: 1em;
+        font-weight: 500;
+        text-align: center;
+        position: absolute;
+        top: 50px;
+        right: 5px;
+    }
+    ul{text-align: left; margin-left: -20px; margin-top: 40px}
+    ul li{
+        list-style:none;
+        font-size: 14px
+    }
+    a.btn{
+        background: #4eb9ea;
+        color: #fff;
+        display: inline-block;
+        padding: 5px;
+        font-weight: 700;
+        transition: all linear .3s;
+        animation: glow 3s infinite;
+/*        animation-delay: 2s;*/
+        animation-direction: alternate-reverse;
+        border-radius: 3px;
+        margin-top: 20px;
+    }
+    @keyframes glow{
+        0%{
+/*            transform: scale(1)*/
+        }
+        50%{
+            background: #8f0fc7;
+        }
+        100%{
+/*            transform: scale(1.5);*/
+            background: red;
+        }
+    }
+    a.btn:hover{
+/*        transform: scale(1.5);*/
+        animation: none;
+    }
+
+    .left{
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        height: 135px;
+/*        display: flex;*/
+    }
+    .left img{
+        width: 80%;
+        align-content: center;
+        margin-top: 15px;
+        
+    }
+    .right{
+        width: 50%;
+        color: #fff;
+        text-align: center;
+    }
+    .right img{
+        width: 150px;
+        box-sizing:border-box;
+        padding: 5px;
+    }
+    .nav{
+        position: fixed;
+        bottom: 10px;
+        background: #fff;
+        width: 100%;
+        padding: 10px 30px;
+        justify-content: space-between;
+    }
+    .nav li{
+        list-style: none;
+        background: #1f80ac;
+        display: inline-block; padding: 10px;
+        
+    }
+    .nav li a{
+        color: #fff;
+        display: block;
+    }
+    .nav li.active{
+        background: red !important;
+    }
+    </style>
+</head>
+<body>
+
+<div class="ads_box p10 shadow mauto s360x135 dflex">
+   <div class="left">
+       <img src="img/comp-removebg-preview.png" alt="" class="mySlides">
+       <img src="img/20190815_10_1-removebg-preview.png" alt="" class="mySlides">
+       <img src="img/IMG_7535-removebg-preview.png" alt="" class="mySlides">
+   </div>
+   <div class="right">
+       <img src="img/Insta_Main_Large.png" alt="">
+        <h2>Ladda upp din 3D-modell</h2>
+        <a class="btn s300X600btn" target="_blank" href="https://www.instacnc.com/">BESÖK SIDA</a>
+   </div>
+</div>
+    
+    <ul class="nav">
+       <li ><a href="index.html" class="btn_nav ">640X360 Size</a></li>
+        <li><a href="300x600.html" class="btn_nav">300X600 Size</a></li>
+         <li><a href="300x300.html" class="btn_nav">300X300 Size</a></li>
+          <li><a href="360x360.html" class="btn_nav">360X360 Size</a></li>
+           <li class="active"><a href="360x135.html" class="btn_nav">360X135 Size</a></li>
+         <li><a href="320x320.html" class="btn_nav">320X320 Size</a></li>
+    </ul>
+
+    <script>
+    
+    var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 4000); // Change image every 2 seconds
+};
+        
+    
+    </script>
+  
+</body>
+</html>
